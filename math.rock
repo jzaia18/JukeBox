@@ -1,0 +1,81 @@
+(Defining important constants)
+EPSILON is .000000000000001 (Floating point accuracy of functions in this library)
+Put 3.14159265358 into PI
+Put PI times 2 into TAU
+Put 2.71828182845 into E
+
+
+(==============={ Abs }===============)
+Abs takes N
+    if N is bigger than 0
+        Give back N
+
+    Give back N times -1
+
+(==============={ Cosine }===============)
+Cosine takes Theta
+    Put PI over 2 minus Theta into Theta
+    Give back Sine taking Theta
+
+(==============={ Factorial }===============)
+Factorial takes N
+    if N is as low as 1
+        Give back 1
+
+    Put N minus 1 into M
+    Give back N times Factorial taking M
+
+(==============={ Sine }===============)
+Sine takes Theta
+    If Theta is less than 0
+        Put Theta times -1 into Theta
+
+    While Theta is bigger than TAU
+        Put Theta minus TAU into Theta
+
+    Put Theta into Result
+    Put 1 into Steps
+    Put 1 into Accuracy
+    Put Theta into Pow
+    While Abs taking Accuracy is bigger than EPSILON and Steps is less than 20 (20 iterations maximum)
+        Put Pow times -1 times Theta times Theta into Pow
+        Put 2 times Steps plus 1 into N
+        Put Pow over Factorial taking N into Accuracy
+        Put Result plus Accuracy into Result
+        Put Steps plus 1 into Steps
+
+    Give back Result
+
+(==============={ Tangent }===============)
+Tangent takes Theta
+    Put Sine taking Theta over Cosine taking Theta into Result
+    Give back Result
+
+(==============={ Modulus }===============)
+Modulus takes Num and Div (Modulus function)
+    While Num is as high as Div
+        Put Num minus Div into Num
+
+Give back Num
+
+
+
+
+TESTING is true
+If TESTING
+Put PI over 2 into HALFPI
+Shout "Testing!"
+Shout Sine taking PI
+Shout Sine taking HALFPI
+Shout Sine taking E
+Shout Sine taking 0
+Shout Sine taking 10
+Shout Cosine taking 0
+Shout Cosine taking HALFPI
+Shout Cosine taking 10
+Shout Tangent taking 0
+Shout Tangent taking HALFPI
+Shout Tangent taking PI
+Shout Tangent taking 10
+Shout Factorial taking 5
+Shout Factorial taking 7
